@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAYA — رايا</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Tajawal', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-emerald-700">رايا</h1>
+        <p class="text-sm text-slate-500">سلامة الدواء — RAYA</p>
+      </div>
+      <div id="patient-info" class="text-sm text-slate-600"></div>
+    </div>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 py-6 space-y-6">
+
+    <section id="setup-card" class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+      <h2 class="font-bold text-lg mb-3">المريض</h2>
+      <div class="space-y-3">
+        <input id="patient-name" type="text" placeholder="اسم المريض"
+          class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-emerald-600" />
+        <input id="patient-age" type="number" placeholder="العمر"
+          class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-emerald-600" />
+        <button id="create-patient"
+          class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg py-2.5 transition">
+          إنشاء ملف المريض
+        </button>
+      </div>
+    </section>
+
+    <section id="add-card" class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hidden">
+      <h2 class="font-bold text-lg mb-3">إضافة دواء</h2>
+      <div class="space-y-3">
+        <input id="med-name" list="drug-list" type="text"
+          placeholder="اسم الدواء (مثال: بانادول، Concor)"
+          class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-emerald-600" />
+        <datalist id="drug-list"></datalist>
+        <div class="flex gap-3">
+          <input id="med-dose" type="text" placeholder="الجرعة (500mg)"
+            class="w-1/2 border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-emerald-600" />
+          <input id="med-freq" type="text" placeholder="التكرار (مرتين يوميًا)"
+            class="w-1/2 border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-emerald-600" />
+        </div>
+        <button id="add-med"
+          class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg py-2.5 transition">
+          إضافة الدواء
+        </button>
+        <div id="add-error" class="text-sm text-red-600 hidden"></div>
+      </div>
+    </section>
+
+    <section id="warnings-card" class="space-y-3 hidden"></section>
+
+    <section id="meds-card" class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hidden">
+      <h2 class="font-bold text-lg mb-3">الأدوية الحالية</h2>
+      <ul id="meds-list" class="space-y-2"></ul>
+    </section>
+
+    <p class="text-xs text-slate-500 leading-relaxed border-t pt-4">
+      تنبيه: هذا التطبيق أداة مساعدة وليس بديلًا عن استشارة الطبيب أو الصيدلي.
+      يُرجى مراجعة المختصين قبل اتخاذ أي قرار طبي.
+    </p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

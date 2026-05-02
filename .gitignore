@@ -1,0 +1,7 @@
+﻿venv/
+__pycache__/
+*.pyc
+*.pyo
+backend/raya.db
+.env
+.DS_Store
