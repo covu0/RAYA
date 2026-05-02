@@ -1,4 +1,4 @@
-const API = "http://localhost:8000";
+const API = "https://raya-api.onrender.com";
 
 const state = {
   caregiverId: null,
