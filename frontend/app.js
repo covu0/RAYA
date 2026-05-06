@@ -1,5 +1,8 @@
 const API = "https://raya-api.onrender.com";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7209a21 (final update with chatbot)
 const state = {
   caregiverId: null,
   patientId: null,
